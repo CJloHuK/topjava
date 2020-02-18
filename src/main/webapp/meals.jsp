@@ -14,6 +14,7 @@
         .excess {
             color: red;
         }
+
     </style>
 </head>
 <body>
@@ -23,6 +24,16 @@
     <h2>Meals</h2>
     <a href="meals?action=create">Add Meal</a>
     <br><br>
+
+    <form method="post" action="meals">
+        <input type="hidden" name="action" value="filter">
+        <input type="time" value="${meal.timeStart}" name="timeStart">
+        <input type="date" value="${meal.dateStart}" name="dateStart"><br>
+        <input type="time" value="${meal.timeFinish}" name="timeFinish">
+        <input type="date" value="${meal.dateFinish}" name="dateFinish"><br>
+        <button type="submit">Filter</button>
+    </form>
+
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
         <tr>
