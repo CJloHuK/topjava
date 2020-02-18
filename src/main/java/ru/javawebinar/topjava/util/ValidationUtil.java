@@ -2,6 +2,7 @@ package ru.javawebinar.topjava.util;
 
 
 import ru.javawebinar.topjava.model.AbstractBaseEntity;
+import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 public class ValidationUtil {
@@ -23,6 +24,12 @@ public class ValidationUtil {
     public static void checkNotFound(boolean found, String msg) {
         if (!found) {
             throw new NotFoundException("Not found entity with " + msg);
+        }
+    }
+
+    public static void checkMyMeal(Meal meal, int userId) {
+        if (meal.getUserId() != userId) {
+            throw new NotFoundException("Meal is not users " + userId);
         }
     }
 
