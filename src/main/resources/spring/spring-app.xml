@@ -11,6 +11,7 @@
             <property name="repository" ref="inmemoryUserRepository"/>
         </bean>
     -->
+    <import resource="spring-cache.xml"/>
 
     <!-- Not necessary, already included with component-scan -->
     <!--<context:annotation-config/>-->
